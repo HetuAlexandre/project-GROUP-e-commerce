@@ -153,8 +153,6 @@ const DeleteButton = styled.button`
 const Price = styled.div`
   font-size: 25px;
   font-weight: 500;
-  
-  /* margin-left: 50px ; */
 `;
 
 export default CartItem;

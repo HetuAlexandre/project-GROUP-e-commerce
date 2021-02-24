@@ -218,6 +218,7 @@ const Logo = styled.div`
   bottom: 10%;
   left: 10px;
   padding: 0 20px;
+  cursor: pointer;
 `;
 
 const Suggestion = styled.li`
@@ -249,13 +250,5 @@ const CartWrapper = styled.div`
   }
 `;
 
-const CartButton = styled(Link)`
-  border: 2px solid black;
-  text-decoration: none;
-  text-align: center;
-  width: 50px;
-  height: 30px;
-  margin-right: 20px;
-`;
 
 export default Typehead;

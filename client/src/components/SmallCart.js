@@ -1,4 +1,4 @@
-import React, { useState,  useContext, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 const SmallCart = () => {
   const storeItems = useSelector((state) => state);
   const [total, setTotal] = useState(0);
-  // const [status, setStatus] = useState('loading');
 
   useEffect(() => {
     if (storeItems) {
@@ -18,13 +17,9 @@ const SmallCart = () => {
     }
   }, [storeItems]);
 
-  // if (status === 'loading') {
-  //   return <div>Loading...</div>;
-  // }
   return (
     <Container>
       <Div>
-        {/* <h3>Currently in your cart:</h3> */}
         <Subtotal>
           <p>Subtotal</p>
           <span>${total}</span>
@@ -34,11 +29,6 @@ const SmallCart = () => {
               <SmallCartImgHelper>
                 <SmallCartImg src={item.imageSrc} />
               </SmallCartImgHelper>
-              {/* <SmallCartInfo>
-                <SmallCartName>{item.name.substring(0, 17)}... </SmallCartName>
-                <SmallCartPrice>{item.price}</SmallCartPrice>
-                <SmallCartQuantity>Quantity: {item.quantity}</SmallCartQuantity>
-              </SmallCartInfo> */}
             </SmallCartDiv>
         ))}
       </Div>
@@ -54,7 +44,6 @@ const Container = styled.div`
   position: sticky;
   top: 0;
   z-index: 10;
-  /* margin-left: 20px; */
   h3 {
     font-weight: 500;
   }
@@ -81,7 +70,6 @@ const Subtotal = styled.div`
 const SmallCartImgHelper = styled.div`
   height: 129px;
   width: 122px;
-  /* margin: 10px; */
   display: flex;
   align-items: center;
 `;
@@ -89,12 +77,6 @@ const SmallCartImg = styled.img`
   width: 100%;
   height: auto;
 `;
-
-const SmallCartName = styled.p``;
-
-const SmallCartPrice = styled.p``;
-
-const SmallCartQuantity = styled.p``;
 
 const SmallCartDiv = styled(Link)`
   display: flex;
@@ -104,12 +86,6 @@ const SmallCartDiv = styled(Link)`
   margin-bottom:20px;
   text-decoration: none;
   align-items: center;
-  /* margin: 5px; */
-`;
-
-const SmallCartInfo = styled.div`
-  font-size: 14px;
-  line-height: 10px;
 `;
 
 export default SmallCart;

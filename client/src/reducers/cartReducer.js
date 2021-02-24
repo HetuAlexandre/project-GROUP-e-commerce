@@ -38,4 +38,3 @@ export default function cartReducer(state = initialState, action) {
 }
 export const getItems = (state) => state.items;
 
-// quantity: state[action.item._id]? state[action.item._id].quantity + 1: 1,
